@@ -329,7 +329,7 @@ export default function App() {
             VisionCGPA does not store any data. Data is processed in real-time and not stored.
           </p>
           <p className="text-sm text-zinc-400">
-            Developed by <a href="https://saquibnazeer.vercel.app"><mark><bold>Saquib Nazeer</bold></mark></a>
+            Developed by <a href="https://saquibnazeer.vercel.app"><bold>Saquib Nazeer</bold></a>
           </p>
         </footer>
       </main>
