@@ -28,14 +28,14 @@ export const CourseList: React.FC<CourseListProps> = ({ courses, onUpdate, onDel
         </button>
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-zinc-200 bg-white">
-        <table className="w-full text-left border-collapse">
+      <div className="overflow-x-auto rounded-xl border border-zinc-200 bg-white">
+        <table className="w-full text-left border-collapse min-w-[450px]">
           <thead>
             <tr className="bg-zinc-50 border-bottom border-zinc-200">
-              <th className="px-6 py-4 text-sm font-semibold text-zinc-600">Subject Name</th>
-              <th className="px-6 py-4 text-sm font-semibold text-zinc-600 w-24 text-center">Credits</th>
-              <th className="px-6 py-4 text-sm font-semibold text-zinc-600 w-24 text-center">Grade</th>
-              <th className="px-6 py-4 text-sm font-semibold text-zinc-600 w-16"></th>
+              <th className="px-4 py-4 md:px-6 text-sm font-semibold text-zinc-600">Subject Name</th>
+              <th className="px-2 py-4 md:px-6 text-sm font-semibold text-zinc-600 w-20 md:w-24 text-center">Credits</th>
+              <th className="px-2 py-4 md:px-6 text-sm font-semibold text-zinc-600 w-24 text-center">Grade</th>
+              <th className="px-2 py-4 md:px-6 text-sm font-semibold text-zinc-600 w-12 md:w-16"></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-zinc-100">
@@ -48,16 +48,17 @@ export const CourseList: React.FC<CourseListProps> = ({ courses, onUpdate, onDel
                   exit={{ opacity: 0, x: -20 }}
                   className="group hover:bg-zinc-50/50 transition-colors"
                 >
-                  <td className="px-6 py-4">
-                    <input
-                      type="text"
+                  <td className="px-4 py-4 md:px-6">
+                    <textarea
                       value={course.name}
                       onChange={(e) => onUpdate(course.id, 'name', e.target.value)}
-                      className="w-full bg-transparent border-none focus:ring-0 p-0 text-zinc-900 placeholder-zinc-400"
+                      className="w-full bg-transparent border-none focus:ring-0 p-0 text-zinc-900 placeholder-zinc-400 leading-tight resize-none"
+                      style={{ fieldSizing: "content", minHeight: "1.5rem" } as any}
+                      rows={course.name.length > 40 ? 3 : course.name.length > 20 ? 2 : 1}
                       placeholder="e.g. Mathematics"
                     />
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-2 py-4 md:px-6">
                     <input
                       type="number"
                       value={course.credits}
@@ -65,7 +66,7 @@ export const CourseList: React.FC<CourseListProps> = ({ courses, onUpdate, onDel
                       className="w-full bg-transparent border-none focus:ring-0 p-0 text-center text-zinc-900"
                     />
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-2 py-4 md:px-6">
                     <input
                       type="text"
                       value={course.grade}
@@ -74,10 +75,10 @@ export const CourseList: React.FC<CourseListProps> = ({ courses, onUpdate, onDel
                       placeholder="O"
                     />
                   </td>
-                  <td className="px-6 py-4">
+                  <td className="px-2 py-4 md:px-6">
                     <button
                       onClick={() => onDelete(course.id)}
-                      className="p-2 text-zinc-400 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
+                      className="p-2 text-zinc-400 hover:text-red-500 transition-colors md:opacity-0 md:group-hover:opacity-100"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -87,7 +88,7 @@ export const CourseList: React.FC<CourseListProps> = ({ courses, onUpdate, onDel
             </AnimatePresence>
           </tbody>
         </table>
-        
+
         {courses.length === 0 && (
           <div className="py-12 text-center text-zinc-500">
             No courses added yet. Upload a marksheet to begin.
