@@ -226,7 +226,8 @@ export default function App() {
                           </div>
                           <h3 className="text-lg font-semibold text-zinc-900">No data yet</h3>
                           <p className="text-sm text-zinc-500">
-                            Upload your marksheet or add courses manually to see your CGPA calculation.
+                            Upload your marksheet or add courses manually to see your CGPA calculation. <br>
+                            <p> <mark> Edit Credits if not shown on marksheet. </mark></p>
                           </p>
                         </div>
                       </motion.div>
