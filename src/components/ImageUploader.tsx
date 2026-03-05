@@ -39,7 +39,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload, isA
       )}
     >
       <input {...getInputProps()} />
-      
+
       <motion.div
         initial={{ scale: 1 }}
         animate={{ scale: isDragActive ? 1.1 : 1 }}
@@ -60,7 +60,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload, isA
           {isAnalyzing ? "Analyzing Marksheet..." : isDragActive ? "Drop it here" : "Upload Marksheet"}
         </p>
         <p className="text-sm text-zinc-500">
-          {isAnalyzing ? "Gemini is extracting subject details" : "Drag & drop or click to select image"}
+          {isAnalyzing ? "VisionCGPA is extracting subject details" : "Drag & drop or click to select image"}
         </p>
       </div>
 

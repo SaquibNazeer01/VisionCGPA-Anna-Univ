@@ -204,6 +204,19 @@ export default function App() {
                         </div>
                       </div>
 
+                      {/* Tip for Missing Credits */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="p-4 bg-amber-50 border border-amber-200 rounded-2xl flex items-start gap-3"
+                      >
+                        <Info className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                        <div className="text-amber-800 text-sm">
+                          <strong className="font-semibold block mb-0.5">Please Verify Your Details:</strong>
+                          <span>Some marksheets do not display credits. <mark className="bg-amber-200/50 px-1 rounded text-amber-900 font-medium">Edit Credits if not shown on marksheet</mark> to ensure an accurate calculation.</span>
+                        </div>
+                      </motion.div>
+
                       {/* Course List */}
                       <CourseList
                         courses={courses}
@@ -226,8 +239,8 @@ export default function App() {
                           </div>
                           <h3 className="text-lg font-semibold text-zinc-900">No data yet</h3>
                           <p className="text-sm text-zinc-500">
-                            Upload your marksheet or add courses manually to see your CGPA calculation. <br>
-                             <mark> Edit Credits if not shown on marksheet. </mark>
+                            Upload your marksheet or add courses manually to see your CGPA calculation.
+                            <mark> Edit Credits if not shown on marksheet. </mark>
                           </p>
                         </div>
                       </motion.div>
