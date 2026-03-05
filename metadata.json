@@ -1,0 +1,7 @@
+{
+  "name": "VisionCGPAApp",
+  "description": "AI-powered CGPA calculator that extracts course data directly from marksheet photos using Gemini.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
