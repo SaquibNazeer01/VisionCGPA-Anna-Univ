@@ -11,7 +11,7 @@ export interface Course {
 
 export async function analyzeMarksheet(base64Image: string, mimeType: string): Promise<Course[]> {
   const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash-lite",
+    model: "gemini-2.5-flash",
     contents: [
       {
         parts: [

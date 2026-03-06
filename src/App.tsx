@@ -30,7 +30,7 @@ export default function App() {
         setCourses(prev => [...prev, ...extractedCourses]);
       }
     } catch (err) {
-      setError("Failed to analyze image. Please check your connection and try again.");
+      setError(`Failed to analyze image: ${err?.message || "Please check your connection and try again."}`);
       console.error(err);
     } finally {
       setIsAnalyzing(false);
