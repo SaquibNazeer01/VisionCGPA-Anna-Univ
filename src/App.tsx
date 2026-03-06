@@ -5,7 +5,7 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, GraduationCap, RefreshCcw, Info, HelpCircle, MessageSquare, Mail, CheckCircle2, Calculator } from 'lucide-react';
+import { Sparkles, GraduationCap, RefreshCcw, Info, HelpCircle, MessageSquare, Mail, CheckCircle2, Calculator, Plus } from 'lucide-react';
 import { ImageUploader } from './components/ImageUploader';
 import { CourseList } from './components/CourseList';
 import { Course, analyzeMarksheet, calculateCGPA } from './services/gemini';
@@ -238,10 +238,16 @@ export default function App() {
                             <GraduationCap className="w-8 h-8 text-zinc-400" />
                           </div>
                           <h3 className="text-lg font-semibold text-zinc-900">No data yet</h3>
-                          <p className="text-sm text-zinc-500">
-                            Upload your marksheet or add courses manually to see your CGPA calculation.
-                            <mark> Edit Credits if not shown on marksheet. </mark>
+                          <p className="text-sm text-zinc-500 mb-6">
+                            Upload your marksheet or add courses manually to calculate your CGPA.
                           </p>
+                          <button
+                            onClick={addCourse}
+                            className="inline-flex items-center gap-2 px-6 py-3 mt-4 text-sm font-semibold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200"
+                          >
+                            <Plus className="w-4 h-4" />
+                            Add Course Manually
+                          </button>
                         </div>
                       </motion.div>
                     )
